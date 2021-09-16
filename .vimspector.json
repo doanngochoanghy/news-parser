@@ -1,0 +1,126 @@
+{
+  "configurations": {
+    "celery": {
+      "adapter": "debugpy",
+      "variables": {
+        "VirtualEnv": {
+          "shell": ["pipenv", "--venv"]
+        }
+      },
+      "configuration": {
+        "name": "<Python>: Launch",
+        "type": "python",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "python": "${VirtualEnv}/bin/python",
+        "stopOnEntry": false,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "module": "celery",
+        "args": ["-A", "fb_app", "worker", "--loglevel=info"]
+      },
+      "breakpoints": {
+        "exception": {
+          "raised": "N",
+          "uncaught": "",
+          "userUnhandled": ""
+        }
+      }
+    },
+    "main": {
+      "adapter": "debugpy",
+      "variables": {
+        "VirtualEnv": {
+          "shell": ["pipenv", "--venv"]
+        }
+      },
+      "configuration": {
+        "name": "<Python>: Launch",
+        "type": "python",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "python": "${VirtualEnv}/bin/python",
+        "stopOnEntry": false,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "program": "main.py",
+        "args": ["vnexpress", "html"]
+      },
+      "breakpoints": {
+        "exception": {
+          "raised": "N",
+          "uncaught": "",
+          "userUnhandled": ""
+        }
+      }
+    },
+    "launch": {
+      "adapter": "debugpy",
+      "variables": {
+        "VirtualEnv": {
+          "shell": ["pipenv", "--venv"]
+        }
+      },
+      "configuration": {
+        "name": "<Python>: Launch",
+        "type": "python",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "python": "${VirtualEnv}/bin/python",
+        "stopOnEntry": false,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "program": "manage.py",
+        "args": ["runserver", "--noreload"]
+      },
+      "breakpoints": {
+        "exception": {
+          "raised": "N",
+          "uncaught": "",
+          "userUnhandled": ""
+        }
+      }
+    },
+    "test": {
+      "adapter": "debugpy",
+      "variables": {
+        "VirtualEnv": {
+          "shell": ["pipenv", "--venv"]
+        }
+      },
+      "configuration": {
+        "name": "<Python>: Launch",
+        "type": "python",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "python": "${VirtualEnv}/bin/python",
+        "stoponentry": false,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "module": "pytest",
+        "args": ["-s", "*${file_test}", "-vv", "*${pytest_args}"]
+      },
+      "breakpoints": {
+        "exception": {
+          "raised": "N",
+          "uncaught": "",
+          "userUnhandled": ""
+        }
+      }
+    },
+    "remote": {
+      "adapter": "multi-session",
+      "configuration": {
+        "name": "Attach: listen",
+        "type": "python",
+        "request": "attach",
+        "pathMappings": [
+          {
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "."
+          }
+        ]
+      }
+    }
+  }
+}
