@@ -44,7 +44,7 @@
         "console": "externalTerminal",
         "debugOptions": [],
         "program": "main.py",
-        "args": ["vnexpress", "html"]
+        "args": ["vnexpress", "html", "81000"]
       },
       "breakpoints": {
         "exception": {

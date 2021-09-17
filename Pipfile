@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 requests = "*"
 marshmallow = "*"
+underthesea = "*"
+jupyter = "*"
+pandas = "*"
 
 [dev-packages]
 pytest = "*"
